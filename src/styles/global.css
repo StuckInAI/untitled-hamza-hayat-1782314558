@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@keyframes resonance-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 0 0px var(--ring-color, rgba(255,255,255,0.8));
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0.4;
+    box-shadow: 0 0 0 12px var(--ring-color, rgba(255,255,255,0));
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 0 0px var(--ring-color, rgba(255,255,255,0));
+  }
+}
+
+@keyframes absorb-flash {
+  0%   { filter: brightness(1); }
+  25%  { filter: brightness(2.2); }
+  50%  { filter: brightness(0.7); }
+  75%  { filter: brightness(1.8); }
+  100% { filter: brightness(1); }
+}
+
+@keyframes node-shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-4px); }
+  40%  { transform: translateX(4px); }
+  60%  { transform: translateX(-3px); }
+  80%  { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes win-pop {
+  0%   { transform: scale(0.7); opacity: 0; }
+  70%  { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float-up {
+  0%   { transform: translateY(0px); opacity: 1; }
+  100% { transform: translateY(-20px); opacity: 0; }
+}
+
+.animate-resonance {
+  animation: resonance-pulse 0.45s ease-out;
+}
+
+.animate-absorb {
+  animation: absorb-flash 0.35s ease-out, node-shake 0.35s ease-out;
+}
+
+.animate-win-pop {
+  animation: win-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}

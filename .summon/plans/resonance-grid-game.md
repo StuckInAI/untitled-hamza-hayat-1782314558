@@ -1,5 +1,5 @@
 ---
-status: pending
+status: building
 title: Resonance Grid — Novel Wave Propagation Puzzle Game
 ---
 
